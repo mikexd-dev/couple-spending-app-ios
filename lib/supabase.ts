@@ -19,6 +19,11 @@ export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
     persistSession: true,
     detectSessionInUrl: Platform.OS === "web",
   },
+  global: {
+    // Force native fetch — prevents Supabase falling back to whatwg-fetch
+    // polyfill (XHR-based) which fails on iOS simulator
+    fetch: fetch.bind(globalThis),
+  },
   realtime: {
     params: {
       eventsPerSecond: 10,
