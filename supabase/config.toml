@@ -1,0 +1,21 @@
+[project]
+id = "your-project-ref"
+name = "financial-tracker"
+
+[auth]
+enabled = true
+site_url = "exp://localhost:8081"
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+
+[auth.external.apple]
+enabled = false
+
+[db]
+major_version = 15
+
+[realtime]
+enabled = true
