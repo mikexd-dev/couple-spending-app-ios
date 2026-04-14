@@ -240,6 +240,29 @@ export interface Database {
           updated_at?: string;
         };
       };
+      couple_settings: {
+        Row: {
+          id: string;
+          couple_id: string;
+          google_sheet_id: string | null;
+          google_sheets_enabled: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          couple_id: string;
+          google_sheet_id?: string | null;
+          google_sheets_enabled?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          google_sheet_id?: string | null;
+          google_sheets_enabled?: boolean;
+          updated_at?: string;
+        };
+      };
       bills: {
         Row: {
           id: string;
