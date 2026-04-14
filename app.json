@@ -15,7 +15,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.financialtracker.app"
+      "bundleIdentifier": "com.financialtracker.app",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Use Face ID to unlock Financial Tracker"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -32,7 +35,14 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow Financial Tracker to use Face ID to unlock the app"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
